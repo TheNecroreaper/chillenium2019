@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\CollisionSystem.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Floating.cs" />
+    <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Alex Wu/Documents/Chillenium_2019/Chillenium 2019/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
