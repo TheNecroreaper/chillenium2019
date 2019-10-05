@@ -62,8 +62,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\attack.cs" />
     <Compile Include="Assets\Scripts\attackTrigger.cs" />
+    <Compile Include="Assets\Scripts\changeScript.cs" />
     <Compile Include="Assets\Scripts\CollisionSystem.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Floating.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />

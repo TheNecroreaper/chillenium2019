@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Transform player;
     private Vector3 spawnPoint;
     public GameObject trigger;
-
+    private Floating floatScript;
+    private attackTrigger attackScript;
     //Constants and variables for horizontal movement
     private const float GROUNDED_MOVEMENT = 0.15f;
     private const float AIR_MOVEMENT = 0.075f;
@@ -70,6 +71,11 @@ public class PlayerMovement : MonoBehaviour
         {          //Jump
             GetComponent<Rigidbody>().AddForce(Vector3.up * JUMP_FORCE);
             playerCollision.grounded = false;
+        }
+        if(Input.GetKeyDown("q"))
+        {
+            floatScript.enabled = !floatScript.enabled;
+            attackScript.enabled = !floatScript.enabled;
         }
     }
 
