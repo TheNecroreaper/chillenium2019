@@ -11,11 +11,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 spawnPoint;
     //Constants and variables for horizontal movement
     private const float GROUNDED_MOVEMENT = 0.15f;
-    private const float AIR_MOVEMENT = 0.1f;
+    private const float AIR_MOVEMENT = 0.075f;
     private float moveSpeed;
 
     //Constant for jumping
-    private const float JUMP_FORCE = 200f;
+    private const float JUMP_FORCE = 25f;
 
     // Use this for initialization
     void Start()
@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         spawnPoint = player.position;
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Set status
         if (playerCollision.grounded)
@@ -43,14 +43,16 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Controls
-        if (Input.GetKey("d") && !playerCollision.rightWalled)              //Move right     
+        if (Input.GetKey("d") )              //Move right     
             player.position += Vector3.right * moveSpeed;
 
-        if (Input.GetKey("a") && !playerCollision.leftWalled)               //Move left
+        if (Input.GetKey("a"))               //Move left
             player.position += Vector3.left * moveSpeed;
 
-        if (Input.GetKeyDown("space") && playerCollision.grounded)          //Jump
+        if (Input.GetKey("space") && playerCollision.grounded)
+        {          //Jump
             GetComponent<Rigidbody>().AddForce(Vector3.up * JUMP_FORCE);
-
+            playerCollision.grounded = false;
+        }
     }
 }
